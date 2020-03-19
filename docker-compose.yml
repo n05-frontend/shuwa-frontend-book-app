@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    command: go run main.go
+    container_name: book-review-api
+    ports:
+      - "1323:1323"
+    volumes:
+      - .:/app
