@@ -1,0 +1,141 @@
+/* ページ */
+body {
+  background-color: #eee;
+}
+
+.page {
+  margin: 0 auto;
+  width: 700px;
+}
+
+.page__title {
+  font-size: 1.8rem;
+}
+
+/* 書籍リスト */
+.book-list {
+  padding: 0;
+  list-style: none;
+}
+
+.book-list__item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+  padding: 30px;
+}
+
+.book-list__item__inner {
+  display: flex;
+}
+
+.book-list__item__inner__image {
+  display: block;
+  flex-basis: 148px;
+  margin-right: 20px;
+}
+
+.book-list__item__inner__info {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-list__item__inner__info__title {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.book-list__item__inner__info__description {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.book-list__item__inner__info__comment {
+  font-size: 1rem;
+  margin: 0;
+  text-align: right;
+}
+
+.book-list__item__inner__info__comment__link {
+  color: #000;
+  text-decoration: underline;
+}
+
+.book-list__item__inner__info__comment__link:hover {
+  text-decoration: underline;
+}
+
+/* レビューリスト */
+.review {
+  display: none;
+}
+
+.review-list {
+  border-top: 1px solid #d6d6d6;
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.review-list__item {
+  border-bottom: 1px solid #d6d6d6;
+  font-size: 1rem;
+  padding: 15px 0;
+}
+
+.review-list__item__name {
+  margin: 0;
+}
+
+.review-list__item__comment {
+  margin: 5px 0 0;
+}
+
+.review-list__item__like {
+  margin: 10px 0 0;
+  text-align: right;
+}
+
+.review-list__item__like__button {
+  color: #000;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.review-list__item__like__button:hover {
+  color: #F43C3C;
+}
+
+/* レビュー投稿 */
+.review-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0 0;
+}
+
+.review-form__input {
+  border-color: #d6d6d6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+}
+
+.review-form__submit {
+  background-color: #0ae;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px 0;
+  width: 100%;
+}
