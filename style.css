@@ -48,7 +48,11 @@ body {
   margin: 0;
 }
 
-.book-list__item__inner__info__description {
+.book-list__item__inner__info__title__author {
+  font-size: 1.1rem;
+}
+
+.book-list__item__inner__info__overview {
   color: #666;
   font-size: 0.8rem;
   margin: 0;
@@ -74,51 +78,51 @@ body {
   display: none;
 }
 
-.review-list {
+.review__list {
   border-top: 1px solid #d6d6d6;
   list-style: none;
   margin-top: 20px;
   padding: 0;
 }
 
-.review-list__item {
+.review__list__item {
   border-bottom: 1px solid #d6d6d6;
   font-size: 1rem;
   padding: 15px 0;
 }
 
-.review-list__item__name {
+.review__list__item__name {
   margin: 0;
 }
 
-.review-list__item__comment {
+.review__list__item__comment {
   margin: 5px 0 0;
 }
 
-.review-list__item__like {
+.review__list__item__like {
   margin: 10px 0 0;
   text-align: right;
 }
 
-.review-list__item__like__button {
+.review__list__item__like__button {
   color: #000;
   display: inline-block;
   text-decoration: none;
 }
 
-.review-list__item__like__button:hover {
+.review__list__item__like__button:hover {
   color: #F43C3C;
 }
 
 /* レビュー投稿 */
-.review-form {
+.review__form {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 20px 0 0;
 }
 
-.review-form__input {
+.review__form__input {
   border-color: #d6d6d6;
   border-radius: 3px;
   box-sizing: border-box;
@@ -128,7 +132,7 @@ body {
   width: 100%;
 }
 
-.review-form__submit {
+.review__form__submit {
   background-color: #0ae;
   border: 0;
   border-radius: 3px;
