@@ -1,7 +1,9 @@
 package main
 
 import (
+	"math/rand"
 	"net/http"
+	"time"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -15,6 +17,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	e.GET("/books", list)
+	e.POST("/reviews", review)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
@@ -68,4 +71,17 @@ func list(c echo.Context) error {
 		},
 	}
 	return c.JSON(http.StatusOK, books)
+}
+
+func review(c echo.Context) error {
+	review := new(Review)
+	if err := c.Bind(review); err != nil {
+		return err
+	}
+
+	rand.Seed(time.Now().UnixNano())
+	review.ID = rand.Intn(100000)
+	review.Username = "フロントエンド勉強中"
+	review.Like = 0
+	return c.JSON(http.StatusCreated, review)
 }
