@@ -62,6 +62,21 @@ function appendBook(book) {
           addClass: 'review__form',
           on: {
             submit: function(event) {
+              var textarea = $(event.currentTarget).find('textarea')
+              appendBookReview(textarea.val()).done(function(review) {
+                $('.js-review-' + book.id + ' > .review__list').append(
+                  $('<li></li>', { addClass: 'review__list__item' }).append(
+                    $('<p></p>', { addClass: 'review__list__item__name' }).text(review.username + 'さんの感想・評価')
+                  ).append(
+                    $('<p></p>', { addClass: 'review__list__item__comment' }).text(review.comment)
+                  ).append(
+                    $('<p></p>', { addClass: 'review__list__item__like' }).append([
+                      $('<a></a>', { addClass: 'review__list__item__like__button' }).html('&#x2661;'),
+                      review.like + '件',
+                    ])
+                  )
+                )
+              })
               return false
             }
           }
@@ -79,5 +94,11 @@ function appendBook(book) {
   )
 }
 
-function appendBookReview(review) {
+function appendBookReview(comment) {
+  return $.ajax({
+    url: 'http://localhost:1323/reviews',
+    type: 'post',
+    dataType: 'json',
+    data: { comment }
+  })
 }
