@@ -1,7 +1,7 @@
 $(function() {
   $.ajax('http://localhost:1323/books')
     .done(function(books) {
-      books.forEach(function (book) {
+      books.forEach(function(book) {
         appendBook(book)
       })
     })
@@ -30,7 +30,7 @@ function appendBook(book) {
               addClass: 'book-list__item__inner__info__comment__link js-toggle-review',
               href: '#',
               on: {
-                click: function (e) {
+                click: function() {
                   var bookId = $(this).data('bookId')
                   $('.js-review-' + bookId).toggle('fast')
 
@@ -44,15 +44,23 @@ function appendBook(book) {
     ).append(
       $('<div></div>', { addClass: 'review js-review-' + book.id }).append(
         $('<ul></ul>', { addClass: 'review__list' }).append(
-          book.reviews.map(function (review) {
+          book.reviews.map(function(review) {
             return $('<li></li>', { addClass: 'review__list__item' }).append(
               $('<p></p>', { addClass: 'review__list__item__name' }).text(review.username + 'さんの感想・評価')
             ).append(
               $('<p></p>', { addClass: 'review__list__item__comment' }).text(review.comment)
             ).append(
               $('<p></p>', { addClass: 'review__list__item__like' }).append([
-                $('<a></a>', { addClass: 'review__list__item__like__button' }).html('&#x2661;'),
-                review.like + '件',
+                $('<a></a>', {
+                  addClass: 'review__list__item__like__button',
+                  href: '#',
+                  on: {
+                    click: function(event) {
+                      $(event.currentTarget).html('&#x1f44d; ' + review.like + 1)
+                      return false
+                    }
+                  }
+                }).html('&#x1f44d; ' + review.like + '件')
               ])
             )
           })
@@ -71,8 +79,16 @@ function appendBook(book) {
                     $('<p></p>', { addClass: 'review__list__item__comment' }).text(review.comment)
                   ).append(
                     $('<p></p>', { addClass: 'review__list__item__like' }).append([
-                      $('<a></a>', { addClass: 'review__list__item__like__button' }).html('&#x2661;'),
-                      review.like + '件',
+                      $('<a></a>', {
+                        addClass: 'review__list__item__like__button',
+                        href: '#',
+                        on: {
+                          click: function (event) {
+                            $(event.currentTarget).html('&#x1f44d; ' + review.like + 1)
+                            return false
+                          }
+                        }
+                      }).html('&#x1f44d; ' + review.like + '件')
                     ])
                   )
                 )
