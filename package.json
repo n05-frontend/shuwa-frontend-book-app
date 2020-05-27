@@ -1,0 +1,8 @@
+{
+  "name": "shuwa-frontend-book-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:n05-frontend/shuwa-frontend-book-app.git",
+  "author": "n05-frontend",
+  "license": "MIT"
+}
