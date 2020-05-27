@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 $(function() {
   $.ajax('http://localhost:1323/books')
     .done(function(books) {
