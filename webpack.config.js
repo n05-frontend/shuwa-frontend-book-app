@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
-  entry: './src/app.js',
+  entry: './src/app.ts',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
