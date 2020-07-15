@@ -13,8 +13,11 @@
     "@babel/core": "^7.10.0",
     "@babel/preset-env": "^7.10.0",
     "@babel/preset-typescript": "^7.9.0",
+    "@types/jest": "^25.2.3",
     "@types/jquery": "^3.3.38",
     "babel-loader": "^8.1.0",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
     "typescript": "^3.9.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
