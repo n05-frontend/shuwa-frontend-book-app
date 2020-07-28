@@ -14,4 +14,9 @@ describe('createBookReview()', () => {
     document.body.innerHTML = `<ul>${createBookReview(review)}</ul>`
     expect($('.review__list__item').length).toBe(1)
   })
+
+  test('should match username', () => {
+    document.body.innerHTML = `<ul>${createBookReview(review)}</ul>`
+    expect($('.review__list__item__name').text()).toBe(`${review.username}さんの感想・評価`)
+  })
 })
