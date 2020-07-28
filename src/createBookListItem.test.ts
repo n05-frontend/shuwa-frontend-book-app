@@ -34,4 +34,9 @@ describe('createBookListItem()', () => {
     document.body.innerHTML = `<ul>${createBookListItem(book)}</ul>`
     expect($('.book-list__item__inner__info__title').text()).toBe(`${book.title}(${book.author})`)
   })
+
+  test('should match overview', () => {
+    document.body.innerHTML = `<ul>${createBookListItem(book)}</ul>`
+    expect($('.book-list__item__inner__info__overview').text()).toBe(book.overview)
+  })
 })
