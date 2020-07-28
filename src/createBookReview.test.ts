@@ -24,4 +24,9 @@ describe('createBookReview()', () => {
     document.body.innerHTML = `<ul>${createBookReview(review)}</ul>`
     expect($('.review__list__item__comment').text()).toBe(review.comment)
   })
+
+  test('should match like count', () => {
+    document.body.innerHTML = `<ul>${createBookReview(review)}</ul>`
+    expect($('.review__list__item__like__button').text()).toBe(`❤️ ${review.like}件`)
+  })
 })
