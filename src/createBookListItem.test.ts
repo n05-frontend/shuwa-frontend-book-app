@@ -44,4 +44,9 @@ describe('createBookListItem()', () => {
     document.body.innerHTML = `<ul>${createBookListItem(book)}</ul>`
     expect($('.book-list__item__inner__image').prop('src')).toBe(book.image)
   })
+
+  test('should match review count', () => {
+    document.body.innerHTML = `<ul>${createBookListItem(book)}</ul>`
+    expect($('.book-list__item__inner__info__comment__link').text()).toBe(`${book.reviews.length}件の感想・評価`)
+  })
 })
