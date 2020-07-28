@@ -1,5 +1,8 @@
+jest.mock('./createBookReview')
+
 import $ from 'jquery'
 import createBookListItem from './createBookListItem'
+import createBookReview from './createBookReview'
 import { Book } from './app'
 
 describe('createBookListItem()', () => {
@@ -48,5 +51,10 @@ describe('createBookListItem()', () => {
   test('should match review count', () => {
     document.body.innerHTML = `<ul>${createBookListItem(book)}</ul>`
     expect($('.book-list__item__inner__info__comment__link').text()).toBe(`${book.reviews.length}件の感想・評価`)
+  })
+
+  test('should render review', () => {
+    document.body.innerHTML = `<ul>${createBookListItem(book)}</ul>`
+    expect(createBookReview).toHaveBeenCalledTimes(book.reviews.length)
   })
 })
