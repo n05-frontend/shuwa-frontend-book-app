@@ -6,6 +6,7 @@
   "author": "n05-frontend",
   "license": "MIT",
   "scripts": {
+    "serve": "webpack-dev-server",
     "build": "webpack",
     "lint:ts": "tsc --noEmit",
     "test": "jest"

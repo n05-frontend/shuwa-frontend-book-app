@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist'
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx']
@@ -27,5 +28,9 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    contentBase: __dirname,
+    port: 5000
   },
 };
