@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import ReviewList from './ReviewList'
 import type { Book } from './app'
 
@@ -24,7 +25,7 @@ function BookListItem({ book }: { book: Book }) {
           </p>
         </div>
       </div>
-      {showReview && (
+      <CSSTransition in={showReview} timeout={200} classNames="review">
         <div className="review">
           <ReviewList reviews={book.reviews} />
           <form className="review__form">
@@ -32,7 +33,7 @@ function BookListItem({ book }: { book: Book }) {
             <button className="review__form__submit" type="submit">投稿</button>
           </form>
         </div>
-      )}
+      </CSSTransition>
     </li>
   )
 }
