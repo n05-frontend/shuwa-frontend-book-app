@@ -20,6 +20,7 @@
     "@types/jquery": "^3.3.38",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
+    "@types/react-transition-group": "^4.4.0",
     "babel-loader": "^8.1.0",
     "jest": "^26.0.1",
     "ts-jest": "^26.1.0",
