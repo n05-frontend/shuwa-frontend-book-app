@@ -80,17 +80,17 @@ body {
 }
 
 .review-enter-active {
-  max-height: 500px;
+  max-height: 800px;
   transition: max-height 0.2s ease;
 }
 
 .review-enter-done {
-  max-height: 500px;
+  max-height: 800px;
   overflow-y: scroll;
 }
 
 .review-exit {
-  max-height: 500px;
+  max-height: 800px;
 }
 
 .review-exit-active {
