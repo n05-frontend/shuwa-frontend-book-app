@@ -1,10 +1,28 @@
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import ReviewList from './ReviewList'
-import type { Book } from './app'
+import type { Book, Review } from './app'
+
+async function postReview(comment: string): Promise<Review> {
+  return fetch('http://localhost:1323/reviews', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ comment })
+  }).then<Review>(response => response.json())
+}
 
 function BookListItem({ book }: { book: Book }) {
   const [showReview, setShowReview] = useState(false)
+  const [comment, setComment] = useState('')
+  const [reviews, setReviews] = useState(book.reviews)
+
+  const handleSubmit = async () => {
+    const review = await postReview(comment)
+    setReviews(reviews.concat([review]))
+    setComment('')
+  }
 
   return (
     <li key={book.id} className="book-list__item">
@@ -20,16 +38,22 @@ function BookListItem({ book }: { book: Book }) {
           <p className="book-list__item__inner__info__overview">{book.overview}</p>
           <p className="book-list__item__inner__info__comment">
             <a href="#" className="book-list__item__inner__info__comment__link" onClick={() => { setShowReview(!showReview) }}>
-              {book.reviews.length}件の感想・評価
+              {reviews.length}件の感想・評価
             </a>
           </p>
         </div>
       </div>
       <CSSTransition in={showReview} timeout={200} classNames="review">
         <div className="review">
-          <ReviewList reviews={book.reviews} />
-          <form className="review__form">
-            <textarea className="review__form__input" rows={5} placeholder={`「${book.title}」を読んだ感想・評価を教えてください`}></textarea>
+          <ReviewList reviews={reviews} />
+          <form className="review__form" onSubmit={handleSubmit}>
+            <textarea
+              className="review__form__input"
+              rows={5}
+              placeholder={`「${book.title}」を読んだ感想・評価を教えてください`}
+              onChange={(event) => setComment(event.currentTarget.value)}
+              value={comment}
+            ></textarea>
             <button className="review__form__submit" type="submit">投稿</button>
           </form>
         </div>
