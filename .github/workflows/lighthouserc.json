@@ -1,0 +1,10 @@
+{
+  "ci": {
+    "assert": {
+      "assertions": {
+        "total-blocking-time": ["error", {"maxNumericValue": 1000}],
+        "interactive": ["error", {"maxNumericValue": 4000}]
+      }
+    }
+  }
+}
