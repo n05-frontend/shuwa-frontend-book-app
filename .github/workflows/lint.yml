@@ -19,3 +19,5 @@ jobs:
       run: yarn lint:ts
     - name: Jest UnitTest
       run: yarn test
+    - name: ESLint linting
+      run: yarn eslint
