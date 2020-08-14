@@ -103,13 +103,16 @@ function BookListItem({ book }: { book: Book }) {
         <Info>
           <Title>
             {book.title}
-            <Author>
-              ({book.author})
-            </Author>
+            <Author>({book.author})</Author>
           </Title>
           <Overview>{book.overview}</Overview>
           <Comment>
-            <Link href="#" onClick={() => { setShowReview(!showReview) }}>
+            <Link
+              href="#"
+              onClick={() => {
+                setShowReview(!showReview)
+              }}
+            >
               {reviews.length}件の感想・評価
             </Link>
           </Comment>
@@ -125,7 +128,9 @@ function BookListItem({ book }: { book: Book }) {
               onChange={(event) => setComment(event.currentTarget.value)}
               value={comment}
             ></ReviewInput>
-            <ReviewSubmit onClick={handleSubmit} type="button">投稿</ReviewSubmit>
+            <ReviewSubmit onClick={handleSubmit} type="button">
+              投稿
+            </ReviewSubmit>
           </ReviewForm>
         </div>
       </CSSTransition>
@@ -141,7 +146,9 @@ const List = styled.ul`
 export default function BookList({ books }: { books: Book[] }) {
   return (
     <List>
-      {books.map(book => <BookListItem key={book.id} book={book} />)}
+      {books.map((book) => (
+        <BookListItem key={book.id} book={book} />
+      ))}
     </List>
   )
 }

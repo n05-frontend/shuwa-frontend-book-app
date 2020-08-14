@@ -7,7 +7,6 @@ import Timeline, { Title } from './Timeline'
 import BookList from './BookList'
 
 describe('<Timeline>', () => {
-
   test('should display page title', async () => {
     await act(async () => {
       const wrapper = mount(<Timeline />)

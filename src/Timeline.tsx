@@ -17,7 +17,7 @@ export default function Timeline() {
   const [books, setBooks] = useState<Book[]>([])
 
   useEffect(() => {
-    getBooks().then(books => setBooks(books))
+    getBooks().then((books) => setBooks(books))
   }, [])
 
   return (

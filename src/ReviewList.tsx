@@ -26,7 +26,7 @@ export const LikeButton = styled.a`
   display: inline-block;
   text-decoration: none;
   &:hover {
-    color: #F43C3C;
+    color: #f43c3c;
   }
 `
 
@@ -56,7 +56,9 @@ const List = styled.ul`
 export default function ReviewList({ reviews }: { reviews: Review[] }) {
   return (
     <List>
-      {reviews.map(review => <ReviewListItem key={review.id} review={review} />)}
+      {reviews.map((review) => (
+        <ReviewListItem key={review.id} review={review} />
+      ))}
     </List>
   )
 }

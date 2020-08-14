@@ -7,7 +7,7 @@ export const dummyBooks: Book[] = [
     author: '執筆太郎',
     overview: 'フロントエンド開発をこれから始める方に最適な1冊です',
     image: 'https://example.com/front-end.png',
-    reviews: [],
+    reviews: []
   },
   {
     id: 2,
