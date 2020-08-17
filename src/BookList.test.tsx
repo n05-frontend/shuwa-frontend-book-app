@@ -50,4 +50,9 @@ describe('<BookList>', () => {
     const wrapper = mount(<BookList books={[book]} />)
     expect(wrapper.find('.book-list__item__inner__image').prop('src')).toBe(book.image)
   })
+
+  test('should display review count', () => {
+    const wrapper = mount(<BookList books={[book]} />)
+    expect(wrapper.find('.book-list__item__inner__info__comment__link').text()).toBe(`${book.reviews.length}件の感想・評価`)
+  })
 })
