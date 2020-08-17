@@ -1,17 +1,8 @@
 import React, { useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import ReviewList from './ReviewList'
-import type { Book, Review } from './app'
-
-async function postReview(comment: string): Promise<Review> {
-  return fetch('http://localhost:1323/reviews', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ comment })
-  }).then<Review>(response => response.json())
-}
+import { postReview } from './api'
+import type { Book } from './app'
 
 function BookListItem({ book }: { book: Book }) {
   const [showReview, setShowReview] = useState(false)

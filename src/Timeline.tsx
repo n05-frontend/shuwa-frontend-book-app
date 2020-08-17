@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import BookList from './BookList'
+import { getBooks } from './api'
 import type { Book } from './app'
 
 export default function Timeline() {
   const [books, setBooks] = useState<Book[]>([])
 
   useEffect(() => {
-    fetch('http://localhost:1323/books')
-      .then<Book[]>(response => response.json())
-      .then(books => setBooks(books))
+    getBooks().then(books => setBooks(books))
   }, [])
 
   return (
