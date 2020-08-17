@@ -61,4 +61,10 @@ describe('<BookList>', () => {
     const wrapper = mount(<BookList books={[book]} />)
     expect(wrapper.find('.review').contains(<ReviewList reviews={book.reviews} />)).toBe(true)
   })
+
+  test('should display form elements', () => {
+    const wrapper = mount(<BookList books={[book]} />)
+    expect(wrapper.find('.review__form > textarea').is('.review__form__input')).toBe(true)
+    expect(wrapper.find('.review__form > button').is('.review__form__submit')).toBe(true)
+  })
 })
