@@ -45,4 +45,9 @@ describe('<BookList>', () => {
     const wrapper = mount(<BookList books={[book]} />)
     expect(wrapper.find('.book-list__item__inner__info__overview').text()).toBe(book.overview)
   })
+
+  test('should display image URL', () => {
+    const wrapper = mount(<BookList books={[book]} />)
+    expect(wrapper.find('.book-list__item__inner__image').prop('src')).toBe(book.image)
+  })
 })
