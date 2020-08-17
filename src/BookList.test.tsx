@@ -35,4 +35,9 @@ describe('<BookList>', () => {
     const wrapper = mount(<BookList books={[book]} />)
     expect(wrapper.find('.book-list__item').length).toBe(1)
   })
+
+  test('should display title & author', () => {
+    const wrapper = mount(<BookList books={[book]} />)
+    expect(wrapper.find('.book-list__item__inner__info__title').text()).toBe(`${book.title}(${book.author})`)
+  })
 })
