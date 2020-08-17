@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import BookList from './BookList'
+import ReviewList from './ReviewList'
 import type { Book } from './app'
 
 describe('<BookList>', () => {
@@ -54,5 +55,10 @@ describe('<BookList>', () => {
   test('should display review count', () => {
     const wrapper = mount(<BookList books={[book]} />)
     expect(wrapper.find('.book-list__item__inner__info__comment__link').text()).toBe(`${book.reviews.length}件の感想・評価`)
+  })
+
+  test('should return <ReviewList>', () => {
+    const wrapper = mount(<BookList books={[book]} />)
+    expect(wrapper.find('.review').contains(<ReviewList reviews={book.reviews} />)).toBe(true)
   })
 })
