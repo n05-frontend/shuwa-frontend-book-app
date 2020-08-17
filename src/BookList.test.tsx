@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import BookList from './BookList'
 import type { Book } from './app'
 
@@ -29,5 +29,10 @@ describe('<BookList>', () => {
   test('should return <ul> element', () => {
     const wrapper = shallow(<BookList books={[book]} />)
     expect(wrapper.is('.book-list')).toBe(true)
+  })
+
+  test('should return <li> element', () => {
+    const wrapper = mount(<BookList books={[book]} />)
+    expect(wrapper.find('.book-list__item').length).toBe(1)
   })
 })
