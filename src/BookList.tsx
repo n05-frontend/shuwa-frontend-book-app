@@ -37,7 +37,7 @@ function BookListItem({ book }: { book: Book }) {
       <CSSTransition in={showReview} timeout={200} classNames="review">
         <div className="review">
           <ReviewList reviews={reviews} />
-          <form className="review__form" onSubmit={handleSubmit}>
+          <form className="review__form">
             <textarea
               className="review__form__input"
               rows={5}
@@ -45,7 +45,7 @@ function BookListItem({ book }: { book: Book }) {
               onChange={(event) => setComment(event.currentTarget.value)}
               value={comment}
             ></textarea>
-            <button className="review__form__submit" type="submit">投稿</button>
+            <button className="review__form__submit" onClick={handleSubmit} type="button">投稿</button>
           </form>
         </div>
       </CSSTransition>
