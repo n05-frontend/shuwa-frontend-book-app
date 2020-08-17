@@ -40,4 +40,9 @@ describe('<BookList>', () => {
     const wrapper = mount(<BookList books={[book]} />)
     expect(wrapper.find('.book-list__item__inner__info__title').text()).toBe(`${book.title}(${book.author})`)
   })
+
+  test('should display overview', () => {
+    const wrapper = mount(<BookList books={[book]} />)
+    expect(wrapper.find('.book-list__item__inner__info__overview').text()).toBe(book.overview)
+  })
 })
