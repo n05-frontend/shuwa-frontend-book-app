@@ -30,4 +30,9 @@ describe('<ReviewList>', () => {
     const wrapper = mount(<ReviewList reviews={[review]} />)
     expect(wrapper.find('.review__list__item__comment').text()).toBe(review.comment)
   })
+
+  test('should display like count', () => {
+    const wrapper = mount(<ReviewList reviews={[review]} />)
+    expect(wrapper.find('.review__list__item__like__button').text()).toBe(`❤️ ${review.like}件`)
+  })
 })
