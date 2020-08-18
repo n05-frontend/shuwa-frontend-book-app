@@ -1,6 +1,6 @@
 import React from 'react'
-import { mount, shallow } from 'enzyme'
-import ReviewList from './ReviewList'
+import { mount } from 'enzyme'
+import ReviewList, { Item, Name, Comment, LikeButton } from './ReviewList'
 import type { Review } from './app'
 
 describe('<ReviewList>', () => {
@@ -11,28 +11,28 @@ describe('<ReviewList>', () => {
     like: 3
   }
 
-  test('should return <ul> element', () => {
-    const wrapper = shallow(<ReviewList reviews={[review]} />)
-    expect(wrapper.is('.review__list')).toBe(true)
+  test('should return <ReviewList> element', () => {
+    const wrapper = mount(<ReviewList reviews={[review]} />)
+    expect(wrapper.is(ReviewList)).toBe(true)
   })
 
-  test('should return <li> element', () => {
+  test('should return <Item> element', () => {
     const wrapper = mount(<ReviewList reviews={[review]} />)
-    expect(wrapper.find('.review__list__item').length).toBe(1)
+    expect(wrapper.find(Item).length).toBe(1)
   })
 
   test('should display username', () => {
     const wrapper = mount(<ReviewList reviews={[review]} />)
-    expect(wrapper.find('.review__list__item__name').text()).toBe(`${review.username}さんの感想・評価`)
+    expect(wrapper.find(Name).text()).toBe(`${review.username}さんの感想・評価`)
   })
 
   test('should display comment', () => {
     const wrapper = mount(<ReviewList reviews={[review]} />)
-    expect(wrapper.find('.review__list__item__comment').text()).toBe(review.comment)
+    expect(wrapper.find(Comment).text()).toBe(review.comment)
   })
 
   test('should display like count', () => {
     const wrapper = mount(<ReviewList reviews={[review]} />)
-    expect(wrapper.find('.review__list__item__like__button').text()).toBe(`❤️ ${review.like}件`)
+    expect(wrapper.find(LikeButton).text()).toBe(`❤️ ${review.like}件`)
   })
 })

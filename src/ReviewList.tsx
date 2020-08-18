@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import type { Review } from './app'
 
-const Item = styled.li`
+export const Item = styled.li`
   border-bottom: 1px solid #d6d6d6;
   font-size: 1rem;
   padding: 15px 0;
 `
 
-const Name = styled.p`
+export const Name = styled.p`
   margin: 0;
 `
 
-const Comment = styled.p`
+export const Comment = styled.p`
   margin: 5px 0 0;
 `
 
@@ -21,7 +21,7 @@ const Like = styled.p`
   text-align: right;
 `
 
-const LikeButton = styled.a`
+export const LikeButton = styled.a`
   color: #000;
   display: inline-block;
   text-decoration: none;
