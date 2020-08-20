@@ -5,7 +5,7 @@ import ReviewList from './ReviewList'
 import { postReview } from './api'
 import type { Book } from './app'
 
-const Item = styled.li`
+export const Item = styled.li`
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
@@ -17,7 +17,7 @@ const ItemInner = styled.div`
   display: flex;
 `
 
-const Image = styled.img`
+export const Image = styled.img`
   display: block;
   flex-basis: 148px;
   margin-right: 20px;
@@ -30,7 +30,7 @@ const Info = styled.div`
   justify-content: space-between;
 `
 
-const Title = styled.h3`
+export const Title = styled.h3`
   font-size: 1.4rem;
   margin: 0;
 `
@@ -39,7 +39,7 @@ const Author = styled.span`
   font-size: 1.1rem;
 `
 
-const Overview = styled.p`
+export const Overview = styled.p`
   color: #666;
   font-size: 0.8rem;
   margin: 0;
@@ -51,19 +51,19 @@ const Comment = styled.p`
   text-align: right;
 `
 
-const Link = styled.a`
+export const Link = styled.a`
   color: #000;
   text-decoration: underline;
 `
 
-const ReviewForm = styled.form`
+export const ReviewForm = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 20px 0 0;
 `
 
-const ReviewInput = styled.textarea`
+export const ReviewInput = styled.textarea`
   border-color: #d6d6d6;
   border-radius: 3px;
   box-sizing: border-box;
@@ -73,7 +73,7 @@ const ReviewInput = styled.textarea`
   width: 100%;
 `
 
-const ReviewSubmit = styled.button`
+export const ReviewSubmit = styled.button`
   background-color: #0ae;
   border: 0;
   border-radius: 3px;
