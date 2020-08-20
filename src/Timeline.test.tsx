@@ -3,15 +3,15 @@ jest.mock('./api')
 import React from 'react'
 import { act } from 'react-dom/test-utils'
 import { mount } from 'enzyme'
-import Timeline from './Timeline'
+import Timeline, { Title } from './Timeline'
 import BookList from './BookList'
 
 describe('<Timeline>', () => {
 
-  test('should return <h2> element', async () => {
+  test('should display page title', async () => {
     await act(async () => {
       const wrapper = mount(<Timeline />)
-      expect(wrapper.find('.page__title').text()).toBe('タイムライン')
+      expect(wrapper.find(Title).text()).toBe('タイムライン')
     })
   })
 

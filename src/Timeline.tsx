@@ -9,7 +9,7 @@ const Page = styled.div`
   width: 700px;
 `
 
-const Title = styled.h2`
+export const Title = styled.h2`
   font-size: 1.8rem;
 `
 
