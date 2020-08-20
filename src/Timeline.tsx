@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 import BookList from './BookList'
 import { getBooks } from './api'
 import type { Book } from './app'
+
+const Page = styled.div`
+  margin: 0 auto;
+  width: 700px;
+`
+
+const Title = styled.h2`
+  font-size: 1.8rem;
+`
 
 export default function Timeline() {
   const [books, setBooks] = useState<Book[]>([])
@@ -11,9 +21,9 @@ export default function Timeline() {
   }, [])
 
   return (
-    <div className="page">
-      <h2 className="page__title">タイムライン</h2>
+    <Page>
+      <Title>タイムライン</Title>
       <BookList books={books} />
-    </div>
+    </Page>
   )
 }
