@@ -6,15 +6,15 @@
 
 | ブランチ | 書籍 |
 | --- | --- |
-| 2-2-1_webpack_babel | 6-1 フロントエンド環境の構築 |
-| 2-2-3_typescript | 6-2 TypeScript の導入 |
-| 2-2-4_esmodules | 6-3 コードの分割 |
-| 2-2-5_unit-testing | 6-4 Jest を利用したユニットテスト |
-| 2-2-6_react-component | 6-5 React の導入 |
-| 2-2-7_component-testing | 6-6 Enzyme を使ったコンポーネントのテスト |
-| 2-2-8_styled-components | 6-7 styled-components の導入 |
-| 2-3-1_continuous-integration | 7-1 CI/CD によって受けられるメリット |
-| 2-3-2_measure-perf-with-lh | 7-2 パフォーマンスと改善 |
+| chapter_6-1 | 6-1 フロントエンド環境の構築 |
+| chapter_6-2 | 6-2 TypeScript の導入 |
+| chapter_6-3 | 6-3 コードの分割 |
+| chapter_6-4 | 6-4 Jest を利用したユニットテスト |
+| chapter_6-5 | 6-5 React の導入 |
+| chapter_6-6 | 6-6 Enzyme を使ったコンポーネントのテスト |
+| chapter_6-7 | 6-7 styled-components の導入 |
+| chapter_7-1 | 7-1 CI/CD によって受けられるメリット |
+| chapter_7-2 | 7-2 パフォーマンスと改善 |
 
 ## 実行環境
 本アプリケーションは下記環境を想定して実装されています。
