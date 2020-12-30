@@ -54,7 +54,7 @@ func list(c echo.Context) error {
 					Like:     3,
 				},
 				{
-					ID:       1,
+					ID:       2,
 					Username: "開発大好き",
 					Comment:  "会社のプログラミング研修用として購入しました。受講したメンバーからは分かりやすいととても好評でした。",
 					Like:     1,
