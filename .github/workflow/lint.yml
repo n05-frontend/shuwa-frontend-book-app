@@ -1,0 +1,22 @@
+name: Front-End CI Actions
+
+on: [push, pull_request]
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: c-hive/gha-yarn-cache@v1
+      - name: Package Install
+        run: yarn
+      - name: Typescript Compile
+        run: yarn lint:ts
+      - name: Jest UnitTest
+        run: yarn test
