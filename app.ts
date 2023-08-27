@@ -1,4 +1,21 @@
 import $ from 'jquery';
+import { type } from 'os';
+
+type Book = {
+  id: number
+  title: string
+  author: string
+  overview: string
+  image: string
+  reviews:Review[]
+}
+
+type Review = {
+  id: number
+  username: string
+  comment: string
+  like:number
+}
 
 $(function () {
   $.ajax('http://localhost:1323/books')
@@ -37,7 +54,7 @@ $(function () {
     })
 })
 
-function appendBook(book) {
+function appendBook(book:Book) {
   $('#js-book-list').append($(
     '<li class="book-list__item">' +
       '<div class="book-list__item__inner">' +
@@ -66,7 +83,7 @@ function appendBook(book) {
   ))
 }
 
-function createBookReview(review) {
+function createBookReview(review:Review) {
   return (
     '<li class="review__list__item">' +
       '<p class="review__list__item__name">' + review.username + 'さんの感想・評価</p>' +
