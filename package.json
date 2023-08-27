@@ -9,6 +9,7 @@
     "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-typescript": "^7.22.11",
+    "@types/jquery": "^3.5.17",
     "babel-loader": "^9.1.3",
     "typescript": "^5.2.2",
     "webpack": "^5.88.2",
@@ -16,5 +17,8 @@
   },
   "scripts": {
     "build": "webpack"
+  },
+  "dependencies": {
+    "jquery": "^3.7.0"
   }
 }
