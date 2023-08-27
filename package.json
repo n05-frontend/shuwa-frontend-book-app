@@ -1,0 +1,18 @@
+{
+  "name": "shuwa-frontend-book-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mizuki-yamada/shuwa-frontend-book-app.git",
+  "author": "mizuki-yamada <my79909369@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.11",
+    "@babel/preset-env": "^7.22.10",
+    "babel-loader": "^9.1.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "build": "webpack"
+  }
+}
